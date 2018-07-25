@@ -42,7 +42,7 @@ contract MonsterTokenProxy {
         bytes32 _currentVersionAddressPosition = currentVersionAddressPosition;
         assembly {
             // current contract
-            currentVersionAddress := mload(_currentVersionAddressPosition)
+            currentVersionAddress := sload(_currentVersionAddressPosition)
         }
         require(currentVersionAddress != address(0));
     
