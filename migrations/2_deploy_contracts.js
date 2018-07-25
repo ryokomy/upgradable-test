@@ -1,9 +1,9 @@
-var A = artifacts.require("A");
-var B = artifacts.require("B");
+var MonsterToken = artifacts.require("MonsterToken");
+var MonsterTokenProxy = artifacts.require("MonsterTokenProxy");
 
 module.exports = (deployer, network) => {
   deployer.then(async () => {
-    await deployer.deploy(B);
-    return deployer.deploy(A, B.address)
+    await deployer.deploy(MonsterToken);
+    return deployer.deploy(MonsterTokenProxy, MonsterToken.address)
   })
 }
