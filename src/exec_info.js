@@ -5,12 +5,10 @@ module.exports = async (callback) => {
     // perform actions
     let monsterToken = await MonsterToken.deployed();
     let monsterTokenProxy = await MonsterTokenProxy.deployed();
-    //let n = await instance.n();
-    console.log(monsterToken.address);
-    console.log(monsterTokenProxy.address);
-
+    console.log('MonsterToken address: ', monsterToken.address);
+    console.log('MonsterTokenProxy address: ', monsterTokenProxy.address);
     let proxyOwner = await monsterTokenProxy.getProxyOwner();
     let currentVersion = await monsterTokenProxy.getCurrentVersionAddress();
-    console.log(proxyOwner);
-    console.log(currentVersion);
+    console.log('proxy owner address: ', proxyOwner);
+    console.log('current version address: ', currentVersion);
 };
